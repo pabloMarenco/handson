@@ -4,13 +4,12 @@ import com.example.handson.domain.Employee;
 import com.example.handson.domain.HourlyEmployee;
 import com.example.handson.domain.MonthlyEmployee;
 import com.example.handson.dto.EmployeeDto;
-import com.example.handson.exception.ContractTypeNotValidException;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EmployeeFactory {
 
-    public Employee newEmployee(EmployeeDto employeeDto){
+    public Employee newEmployee(EmployeeDto employeeDto) {
         switch (employeeDto.getContractTypeName()) {
             case "HourlySalaryEmployee":
                 return new HourlyEmployee(employeeDto.getId(), employeeDto.getName(), employeeDto.getRoleId(),

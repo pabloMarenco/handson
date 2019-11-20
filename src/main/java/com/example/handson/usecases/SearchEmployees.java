@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
@@ -25,7 +24,7 @@ public class SearchEmployees implements IEmployeesFromRepository {
     CalculateEmployeeSalaryUseCase calculateEmployeeSalaryUseCase;
 
     @Override
-    public Employee getEmployeeByID(Long id){
+    public Employee getEmployeeByID(Long id) {
         return Arrays.stream(employeeRepository.getEmployees())
                 .filter(e -> e.getId().equals(id))
                 .findFirst()
@@ -34,7 +33,7 @@ public class SearchEmployees implements IEmployeesFromRepository {
     }
 
     @Override
-    public List<Employee> getEmployees(){
+    public List<Employee> getEmployees() {
         return Arrays.stream(employeeRepository.getEmployees())
                 .map(e -> calculateEmployeeSalaryUseCase.calculateSalary(employeeFactory.newEmployee(e)))
                 .collect(Collectors.toList());

@@ -1,8 +1,6 @@
 package com.example.handson.dto;
 
-import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 
 import java.io.Serializable;
 
@@ -18,7 +16,7 @@ public class EmployeeDto implements Serializable {
     private double monthlySalary;
 
 
-    public EmployeeDto(){
+    public EmployeeDto() {
 
     }
 

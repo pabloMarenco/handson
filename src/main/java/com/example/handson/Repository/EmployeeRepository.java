@@ -5,17 +5,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
-
 @Repository
 public class EmployeeRepository implements IEmployeeRepository {
 
     RestOperations restTemplate;
 
-    @Override
-    public EmployeeDto getEmployeeByID(Long employeeID) {
-        return null;
-    }
 
     @Override
     public EmployeeDto[] getEmployees() {
@@ -25,8 +19,4 @@ public class EmployeeRepository implements IEmployeeRepository {
                 EmployeeDto[].class).getBody();
     }
 
-    @Override
-    public List<EmployeeDto> getListEmployees(List<Long> employeesID) {
-        return null;
-    }
 }

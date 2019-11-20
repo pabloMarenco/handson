@@ -1,11 +1,8 @@
 package com.example.handson.domain;
 
-import lombok.Builder;
-import lombok.Data;
-
 public class MonthlyEmployee extends Employee {
 
     public MonthlyEmployee(Long id, String name, int roleId, String roleName, String roleDescription, double salary, double annualSalary) {
-        super(id, name, roleId, "MonthlySalaryEmployee", roleName, roleDescription, salary,0);
+        super(id, name, roleId, "MonthlySalaryEmployee", roleName, roleDescription, salary, 0);
     }
 }
